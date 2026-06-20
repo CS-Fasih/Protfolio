@@ -11,8 +11,8 @@ export default function Footer() {
         <div className="footer__grid reveal">
           {/* Brand Column */}
           <div className="footer__brand">
-            <a href="#home" className="navbar__logo" style={{ fontSize: '22px', fontWeight: 700, color: '#fff' }}>
-              a<span style={{ color: '#e8192c' }}>v</span>o
+            <a href="#home" className="navbar__logo" style={{ fontSize: '20px', fontWeight: 700, color: '#fff' }}>
+              Muhammad <span style={{ color: '#e8192c' }}>Fasih</span>
             </a>
             <p className="footer__brand-desc">
               Engineering robust Web & AI systems. Focused on Microservices & Compilers.

@@ -38,7 +38,7 @@ export default function Navbar() {
       <nav className="navbar" id="navbar">
         <div className="container">
           <a href="#home" className="navbar__logo" onClick={(e) => handleNavClick(e, 'home')}>
-            a<span>v</span>o
+            Muhammad <span>Fasih</span>
           </a>
 
           <div className="navbar__links">

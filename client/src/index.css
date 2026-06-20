@@ -257,10 +257,11 @@ button {
 }
 
 .navbar__logo {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .navbar__logo span {
@@ -806,6 +807,19 @@ button {
   letter-spacing: 3px;
 }
 
+.cert-card__logo {
+  width: 70%;
+  max-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-card__logo svg {
+  width: 100%;
+  height: auto;
+}
+
 .cert-card__meta {
   padding: 12px var(--space-sm);
   display: flex;
@@ -836,6 +850,116 @@ button {
   color: var(--text-muted);
   line-height: 1.6;
   padding: 0 var(--space-sm) var(--space-sm);
+}
+
+/* ============================================
+   OTHER PROJECTS SECTION
+   ============================================ */
+.other-projects {
+  background: var(--bg-white);
+  padding: var(--space-xl) 0;
+}
+
+.other-projects__heading {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.other-projects__heading h2 {
+  font-size: 38px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.other-projects__heading p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: var(--space-sm);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.other-projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.op-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1.5px solid var(--border-light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.op-card:hover {
+  border-color: var(--text-primary);
+  transform: translateY(-4px);
+}
+
+.op-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.op-card__category {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.op-card__github-icon {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.op-card:hover .op-card__github-icon {
+  color: var(--text-primary);
+}
+
+.op-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.op-card__desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.op-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.op-card__tech span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 3px 10px;
+  border: 1px solid var(--border-light);
+  color: var(--text-muted);
+  text-transform: uppercase;
 }
 
 /* ============================================
@@ -1175,6 +1299,10 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .other-projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1220,9 +1348,18 @@ button {
   .about__heading h2,
   .works__heading h2,
   .certifications__heading h2,
-  .contact__heading h2 {
+  .contact__heading h2,
+  .other-projects__heading h2 {
     font-size: 28px;
     letter-spacing: 1px;
+  }
+
+  .other-projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar__logo {
+    font-size: 15px;
   }
 
   .services-grid {

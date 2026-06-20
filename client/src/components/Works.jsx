@@ -18,16 +18,18 @@ export default function Works() {
         {projects.map((project) => (
           <div className="project-card reveal" key={project.id}>
             <div className="project-card__image">
-              {project.isFyp && (
-                <div className="fyp-badge">
-                  <span>Final Year Project</span>
-                </div>
-              )}
               <img src={project.image} alt={project.title} loading="lazy" />
             </div>
 
             <div className="project-card__info">
-              <div className="project-card__category">{project.category}</div>
+              <div className="project-card__category">
+                {project.category}
+                {project.isFyp && (
+                  <span className="project-card__fyp-tag">
+                    &nbsp;&nbsp;&mdash;&nbsp;&nbsp;Final Year Project
+                  </span>
+                )}
+              </div>
               <h3 className="project-card__title">{project.title}</h3>
               <p className="project-card__desc">{project.description}</p>
 

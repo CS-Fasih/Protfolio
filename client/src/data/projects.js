@@ -2,7 +2,7 @@ const projects = [
   {
     id: 1,
     category: "AI / Machine Learning",
-    title: "GeoExtract v2",
+    title: "GeoExtract",
     description:
       "Multi-model AI assistant for satellite and aerial imagery analysis. Upload a satellite image, ask natural language questions — the system routes to specialized YOLO, EuroSAT, and Qwen VLM models and returns visual-analysis responses.",
     techStack: ["React", "FastAPI", "YOLOv11x", "EfficientNet-B2", "Qwen2.5-VL"],

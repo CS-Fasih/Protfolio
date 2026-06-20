@@ -761,9 +761,9 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  position: relative;
   margin-top: 15px;
-  padding: 10px 20px;
+  padding: 12px 50px;
   background: rgb(232, 25, 44);
   color: #ffffff;
   text-decoration: none;
@@ -773,6 +773,11 @@ button {
   letter-spacing: 1px;
   transition: background 0.3s ease, color 0.3s ease;
   border: 1px solid rgb(232, 25, 44);
+}
+
+.certifications__linkedin-btn svg {
+  position: absolute;
+  left: 20px;
 }
 
 .certifications__linkedin-btn:hover {

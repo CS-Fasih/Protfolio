@@ -47,9 +47,21 @@ export default function Works() {
                 </div>
               </div>
 
-              {(project.githubUrl || project.liveUrl) && (
+              {(project.githubUrl || project.liveUrl || project.isClosedSource) && (
                 <div style={{ marginTop: '20px', display: 'flex', gap: '12px' }}>
-                  {project.githubUrl && (
+                  {project.isClosedSource ? (
+                    <span
+                      className="btn-secondary"
+                      style={{
+                        background: 'rgb(232, 25, 44)',
+                        color: '#fff',
+                        borderColor: 'rgb(232, 25, 44)',
+                        cursor: 'default',
+                      }}
+                    >
+                      Closed Source
+                    </span>
+                  ) : project.githubUrl ? (
                     <a
                       href={project.githubUrl}
                       target="_blank"
@@ -58,7 +70,7 @@ export default function Works() {
                     >
                       GitHub
                     </a>
-                  )}
+                  ) : null}
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}

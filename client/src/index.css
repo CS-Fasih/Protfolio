@@ -757,15 +757,15 @@ button {
   gap: 8px;
   margin-top: 15px;
   padding: 10px 20px;
-  background: var(--bg-black);
-  color: var(--text-white);
+  background: rgb(232, 25, 44);
+  color: #ffffff;
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: background 0.3s ease, color 0.3s ease;
-  border: 1px solid var(--border-dark);
+  border: 1px solid rgb(232, 25, 44);
 }
 
 .certifications__linkedin-btn:hover {

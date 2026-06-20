@@ -818,6 +818,8 @@ button {
   background: var(--bg-white);
   transition: transform 0.2s ease;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
 .cert-row:hover {

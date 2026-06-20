@@ -65,7 +65,13 @@ export default function Certifications() {
         {/* Compact Cert List */}
         <div className="cert-list reveal">
           {filtered.map((cert) => (
-            <div className="cert-row" key={cert.id}>
+            <a 
+              href="https://www.linkedin.com/in/muhammad-fasih-19f/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cert-row" 
+              key={cert.id}
+            >
               <div
                 className="cert-row__accent"
                 style={{
@@ -95,7 +101,7 @@ export default function Certifications() {
                   ))}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

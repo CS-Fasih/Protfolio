@@ -8,6 +8,7 @@ const projects = [
     techStack: ["React", "FastAPI", "YOLOv11x", "EfficientNet-B2", "Qwen2.5-VL"],
     image: "/images/project-geoextract.png",
     githubUrl: "https://github.com/GeoExtract",
+    isFyp: true,
     isClosedSource: true,
     liveUrl: null,
   },

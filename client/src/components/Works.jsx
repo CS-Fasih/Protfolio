@@ -18,6 +18,11 @@ export default function Works() {
         {projects.map((project) => (
           <div className="project-card reveal" key={project.id}>
             <div className="project-card__image">
+              {project.isFyp && (
+                <div className="fyp-badge">
+                  <span>Final Year Project</span>
+                </div>
+              )}
               <img src={project.image} alt={project.title} loading="lazy" />
             </div>
 

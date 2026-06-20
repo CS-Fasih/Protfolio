@@ -77,9 +77,19 @@ export default function Hero() {
               robust web applications, intelligent AI systems, and security tools
               across the entire stack.
             </p>
-            <a href="#contact" className="btn-primary" onClick={handleCTAClick}>
-              Get In Touch
-            </a>
+            <div className="hero__buttons">
+              <a href="#contact" className="btn-primary" onClick={handleCTAClick}>
+                Get In Touch
+              </a>
+              <a
+                href="/Muhammad_Fasih_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-white"
+              >
+                Download Resume
+              </a>
+            </div>
           </div>
 
           <div className="hero__stats">

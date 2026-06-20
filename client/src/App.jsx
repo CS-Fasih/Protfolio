@@ -6,6 +6,7 @@ import OtherProjects from './components/OtherProjects';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Certifications />
       <Contact />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

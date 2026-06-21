@@ -1,5 +1,4 @@
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-
+// Groq API migration: we use native fetch so no SDK is required.
 // ── System Prompt ──────────────────────────────────────────
 const SYSTEM_PROMPT = `You are a professional AI assistant embedded in Muhammad Fasih's software engineering portfolio website. Your sole purpose is to help visitors — recruiters, clients, collaborators, and fellow developers — learn about Fasih's background, skills, projects, and availability.
 
@@ -334,9 +333,9 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
-    return res.status(500).json({ error: "GEMINI_API_KEY not configured" });
+    return res.status(500).json({ error: "GROQ_API_KEY not configured" });
   }
 
   const { message, history } = req.body || {};
@@ -360,39 +359,55 @@ module.exports = async function handler(req, res) {
       }
     }
 
-    // ── Build Gemini request ──
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({
-      model: "gemini-2.0-flash",
-      systemInstruction: SYSTEM_PROMPT,
-    });
+    // ── Build Groq request ──
+    const messages = [];
+    messages.push({ role: "system", content: SYSTEM_PROMPT });
 
     // Build chat history from client-sent history
-    const chatHistory = [];
     if (Array.isArray(history)) {
       for (const turn of history.slice(-20)) { // Keep last 20 turns
         if (turn.role && turn.text) {
-          chatHistory.push({
-            role: turn.role === "user" ? "user" : "model",
-            parts: [{ text: turn.text }],
+          messages.push({
+            role: turn.role === "user" ? "user" : "assistant",
+            content: turn.text
           });
         }
       }
     }
 
-    const chat = model.startChat({ history: chatHistory });
-
     // Append README injection to the user message if available
     const userMessage = readmeInjection
-      ? `${message}\n\n[SYSTEM: The following README was automatically fetched for context]${readmeInjection}`
+      ? `${message}\n\n[SYSTEM: The following README was automatically fetched for context]\n${readmeInjection}`
       : message;
 
-    const result = await chat.sendMessage(userMessage);
-    const reply = result.response.text();
+    messages.push({ role: "user", content: userMessage });
+
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${apiKey}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        messages: messages,
+        temperature: 0.7,
+        max_tokens: 1024
+      })
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error("Groq API error:", errorText);
+      throw new Error(`Groq API returned status ${response.status}`);
+    }
+
+    const data = await response.json();
+    const reply = data.choices[0].message.content;
 
     return res.status(200).json({ reply });
   } catch (err) {
-    console.error("Gemini API error:", err.message);
+    console.error("Chat API error:", err.message);
     return res.status(500).json({
       error: "AI service temporarily unavailable. Please try again.",
     });

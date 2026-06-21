@@ -326,7 +326,7 @@ button {
   min-height: 85vh;
   background: var(--bg-dark);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);
 }
@@ -349,7 +349,7 @@ button {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 140px 0 120px;
+  padding: 60px 0 120px;
 }
 
 .hero__text {
@@ -1302,6 +1302,10 @@ button {
    RESPONSIVE — TABLET
    ============================================ */
 @media (max-width: 1024px) {
+  .hero {
+    align-items: center;
+  }
+
   .navbar__links {
     display: none;
   }

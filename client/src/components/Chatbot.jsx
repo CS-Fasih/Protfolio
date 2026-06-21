@@ -139,7 +139,7 @@ export default function Chatbot() {
         <div className="chatbot-header">
           <div className="chatbot-header__info">
             <span className="chatbot-header__title" style={{ fontSize: '15px', fontWeight: '600', letterSpacing: '0.5px' }}>
-              Ask my Assistance
+              Ask my Assistant
             </span>
           </div>
           <button

@@ -6,7 +6,6 @@ import OtherProjects from './components/OtherProjects';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ScrollToTop from './components/ScrollToTop';
 import Chatbot from './components/Chatbot';
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
       <Certifications />
       <Contact />
       <Footer />
-      <ScrollToTop />
       <Chatbot />
     </>
   );

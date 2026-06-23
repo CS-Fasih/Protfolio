@@ -339,6 +339,28 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({ error: "GROQ_API_KEY not configured" });
   }
 
+  // Security: Check Origin to prevent abuse from other domains
+  const origin = req.headers.origin || req.headers.referer;
+  if (origin) {
+    try {
+      const originUrl = new URL(origin);
+      const isAllowed =
+        originUrl.hostname === 'localhost' ||
+        originUrl.hostname === '127.0.0.1' ||
+        originUrl.hostname.endsWith('vercel.app') ||
+        originUrl.hostname === 'muhammadfasih.com' ||
+        originUrl.hostname === 'www.muhammadfasih.com';
+
+      if (!isAllowed) {
+        console.warn(`Blocked cross-origin request from: ${originUrl.hostname}`);
+        return res.status(403).json({ error: "Forbidden: Cross-origin requests not allowed." });
+      }
+    } catch (err) {
+      // If parsing fails, fail secure
+      return res.status(403).json({ error: "Forbidden: Invalid origin format." });
+    }
+  }
+
   const { message, history } = req.body || {};
   if (!message || typeof message !== "string" || message.trim().length === 0) {
     return res.status(400).json({ error: "Message is required" });

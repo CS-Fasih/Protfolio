@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import DOMPurify from 'dompurify';
 
 // Simple markdown-to-HTML renderer for bot responses
 function renderMarkdown(text) {
@@ -15,7 +16,8 @@ function renderMarkdown(text) {
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
     // Line breaks
     .replace(/\n/g, '<br />');
-  return html;
+    
+  return DOMPurify.sanitize(html);
 }
 
 export default function Chatbot() {

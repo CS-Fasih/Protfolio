@@ -1276,6 +1276,45 @@ button {
 }
 
 /* ============================================
+   RESPONSIVE — SMALL DESKTOP / TABLET LANDSCAPE
+   ============================================ */
+@media (max-width: 1100px) {
+  .hero__content {
+    flex-direction: column;
+    gap: var(--space-lg);
+    padding: 100px 0 80px;
+  }
+
+  .hero__text {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .hero__text p {
+    margin: 0 auto var(--space-md) auto;
+  }
+
+  .hero__buttons {
+    justify-content: center;
+  }
+
+  .hero__stats {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+  }
+
+  .hero__stat {
+    text-align: center;
+  }
+
+  .hero__stat-number {
+    justify-content: center;
+  }
+}
+
+/* ============================================
    RESPONSIVE — TABLET
    ============================================ */
 @media (max-width: 900px) {

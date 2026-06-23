@@ -814,7 +814,10 @@ button {
 }
 
 .cert-tab.active .cert-tab__count {
-  background: rgba(255,255,255,0/* ── Cert Cards (Grid Layout) ── */
+  background: rgba(255,255,255,0.2);
+}
+
+/* ── Cert Cards (Grid Layout) ── */
 .cert-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

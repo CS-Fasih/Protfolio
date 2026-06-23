@@ -347,9 +347,7 @@ module.exports = async function handler(req, res) {
       const isAllowed =
         originUrl.hostname === 'localhost' ||
         originUrl.hostname === '127.0.0.1' ||
-        originUrl.hostname.endsWith('vercel.app') ||
-        originUrl.hostname === 'muhammadfasih.com' ||
-        originUrl.hostname === 'www.muhammadfasih.com';
+        originUrl.hostname.endsWith('vercel.app');
 
       if (!isAllowed) {
         console.warn(`Blocked cross-origin request from: ${originUrl.hostname}`);

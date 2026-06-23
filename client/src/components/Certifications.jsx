@@ -23,6 +23,7 @@ const categories = [...new Set(certifications.map((c) => c.category))];
 export default function Certifications() {
   const sectionRef = useScrollReveal();
   const [activeTab, setActiveTab] = useState('All');
+  const [visibleCount, setVisibleCount] = useState(6);
 
   const tabs = ['All', ...categories];
 
@@ -30,6 +31,17 @@ export default function Certifications() {
     activeTab === 'All'
       ? certifications
       : certifications.filter((c) => c.category === activeTab);
+
+  const visibleCertifications = filtered.slice(0, visibleCount);
+
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
+    setVisibleCount(6);
+  };
+
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 6);
+  };
 
   return (
     <section className="certifications" id="certifications" ref={sectionRef}>
@@ -61,7 +73,7 @@ export default function Certifications() {
             <button
               key={tab}
               className={`cert-tab ${activeTab === tab ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab)}
+              onClick={() => handleTabClick(tab)}
             >
               {tab}
               {tab === 'All' && (
@@ -76,34 +88,34 @@ export default function Certifications() {
           ))}
         </div>
 
-        {/* Compact Cert List */}
+        {/* Card Grid */}
         <div className="cert-list reveal">
-          {filtered.map((cert) => (
-            <div className="cert-row" key={cert.id}>
+          {visibleCertifications.map((cert) => (
+            <div className="cert-card" key={cert.id}>
               <div
-                className="cert-row__accent"
+                className="cert-card__accent"
                 style={{
                   background: providerColors[cert.provider] || '#999',
                 }}
               />
-              <div className="cert-row__content">
-                <div className="cert-row__main">
-                  <h4 className="cert-row__title">{cert.title}</h4>
-                  <div className="cert-row__meta">
+              <div className="cert-card__content">
+                <div className="cert-card__main">
+                  <h4 className="cert-card__title">{cert.title}</h4>
+                  <div className="cert-card__meta">
                     <span
-                      className="cert-row__provider"
+                      className="cert-card__provider"
                       style={{
                         color: providerColors[cert.provider] || '#999',
                       }}
                     >
                       {cert.provider}
                     </span>
-                    <span className="cert-row__date">{cert.date}</span>
+                    <span className="cert-card__date">{cert.date}</span>
                   </div>
                 </div>
-                <div className="cert-row__skills">
+                <div className="cert-card__skills">
                   {cert.skills.map((skill) => (
-                    <span key={skill} className="cert-row__skill">
+                    <span key={skill} className="cert-card__skill">
                       {skill}
                     </span>
                   ))}
@@ -112,6 +124,15 @@ export default function Certifications() {
             </div>
           ))}
         </div>
+
+        {/* Load More Button */}
+        {visibleCount < filtered.length && (
+          <div className="cert-load-more-container reveal">
+            <button className="cert-load-more" onClick={loadMore}>
+              Load More Certifications
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import certifications from '../data/certifications';
 
 /* ── Provider brand colors ── */
 const providerColors = {
-  MasterDev: '#e8192c',
+  'Frontend Masters': '#e8192c',
   Educative: '#1a1a4e',
   LinkedIn: '#0A66C2',
   Google: '#4285F4',

@@ -207,7 +207,7 @@ KNOWLEDGE BASE — CERTIFICATIONS (25 Total)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 AI/ML & Data Science (6):
-- Open Source AI with Python and Hugging Face — MasterDev, Mar 2026
+- Open Source AI with Python and Hugging Face — Frontend Masters, Mar 2026
 - AI for Business Professionals — HP, Mar 2026
 - Data Science & Analytics — HP, Mar 2026
 - Machine Learning with NumPy, pandas, scikit-learn — Educative, Dec 2025
@@ -232,7 +232,7 @@ Web Development (12):
 - JavaScript Basics — UC Davis, May 2023
 
 Algorithms & DSA (2):
-- Practical Problem Solving with Algorithms — MasterDev, Oct 2025
+- Practical Problem Solving with Algorithms — Frontend Masters, Oct 2025
 - Data Structures and Algorithms in Python — DataCamp, Oct 2025
 
 AI Prompting (4):

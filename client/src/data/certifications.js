@@ -3,7 +3,7 @@ const certifications = [
   {
     id: 1,
     title: "Open Source AI with Python and Hugging Face",
-    provider: "MasterDev",
+    provider: "Frontend Masters",
     date: "Mar 2026",
     skills: ["Machine Learning"],
     category: "AI/ML & Data Science",

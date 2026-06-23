@@ -284,7 +284,7 @@
 ## Complete Certificates List
 
 ### AI/ML & Data Science
-1. **Open Source AI with Python and Hugging Face** - MasterDev (Formerly Frontend Masters) - Mar 2026 - Skills: Machine Learning Integration
+1. **Open Source AI with Python and Hugging Face** - Frontend Masters - Mar 2026 - Skills: Machine Learning Integration
 2. **AI for Business Professionals** - HP - Mar 2026
 3. **Data Science & Analytics** - HP - Mar 2026 - Skills: Data Science
 4. **Machine Learning with NumPy, pandas, scikit-learn, and More** - Educative - Dec 2025 - Skills: Machine Learning Integration, Data Science
@@ -309,7 +309,7 @@
 19. **JavaScript Basics** - University of California, Davis - May 2023 - Skills: JavaScript
 
 ### Algorithms & Data Structures
-20. **Practical Problem Solving with Algorithms** - MasterDev - Oct 2025 - Skills: JavaScript, Data Structures & Algorithms
+20. **Practical Problem Solving with Algorithms** - Frontend Masters - Oct 2025 - Skills: JavaScript, Data Structures & Algorithms
 21. **Data Structures and Algorithms in Python** - DataCamp - Oct 2025 - Skills: Python, Data Structures & Algorithms
 
 ### AI Prompting & Productivity

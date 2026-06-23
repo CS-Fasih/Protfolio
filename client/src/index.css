@@ -1072,6 +1072,10 @@ button {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-sm);
+  padding: 48px;
+  border: 1.5px solid var(--border-light);
+  border-radius: 0;
+  background: var(--bg-white);
 }
 
 .contact__form .full-width {
@@ -1570,6 +1574,7 @@ button {
 
   .contact__form {
     grid-template-columns: 1fr;
+    padding: 24px;
   }
 
   .footer {

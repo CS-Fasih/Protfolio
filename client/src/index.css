@@ -323,7 +323,7 @@ button {
    ============================================ */
 .hero {
   position: relative;
-  min-height: 85vh;
+  min-height: clamp(600px, 85vh, 850px);
   background: var(--bg-dark);
   display: flex;
   align-items: flex-start;

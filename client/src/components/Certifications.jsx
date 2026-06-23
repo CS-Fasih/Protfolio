@@ -127,7 +127,7 @@ export default function Certifications() {
 
         {/* Load More Button */}
         {visibleCount < filtered.length && (
-          <div className="cert-load-more-container reveal">
+          <div className="cert-load-more-container">
             <button className="cert-load-more" onClick={loadMore}>
               Load More Certifications
             </button>

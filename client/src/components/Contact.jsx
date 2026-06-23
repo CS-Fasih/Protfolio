@@ -22,21 +22,31 @@ export default function Contact() {
     setStatus('');
 
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-      const res = await fetch(`${API_URL}/api/contact`, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '58d59648-acea-47e1-ac3a-d1d20e31c419',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        }),
       });
 
-      if (res.ok) {
+      const result = await res.json();
+
+      if (res.ok && result.success) {
         setStatus('Message sent successfully! I\'ll get back to you soon.');
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        setStatus('Something went wrong. Please try again or email me directly.');
+        setStatus(result.message || 'Something went wrong. Please try again or email me directly.');
       }
     } catch {
-      setStatus('Server unavailable. Please email me at muhammadfasih146@gmail.com');
+      setStatus('Server unavailable. Please email me at muhammadfasihofficial@proton.me');
     } finally {
       setLoading(false);
     }

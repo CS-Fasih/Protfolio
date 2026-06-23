@@ -52,6 +52,7 @@ LINKS:
 - Fiverr:    fiverr.com/cs_fasih
 - Portfolio: muhammadfasih.vercel.app
 - Email:     muhammadfasihofficial@proton.me
+- Phone:     +92 3710236798
 - ORCID:     0009-0000-5293-4890
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -58,8 +58,9 @@ export default function Contact() {
         <div className="contact__heading reveal">
           <h2>Contact</h2>
           <p>
-            Have a project in mind or want to collaborate? Send me a message and I'll
-            get back to you as soon as possible.
+            Have a project in mind or want to collaborate? Send me a message or reach 
+            out directly at <strong>+92 3710236798</strong>, and I'll get back to you 
+            as soon as possible.
           </p>
         </div>
 

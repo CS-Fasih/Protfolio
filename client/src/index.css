@@ -866,14 +866,10 @@ button {
   line-height: 1.4;
 }
 
-.cert-card__link {
-  color: inherit;
+.cert-card--clickable {
   text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.cert-card__link:hover {
-  color: var(--primary-color);
+  color: inherit;
+  cursor: pointer;
 }
 
 .cert-card__meta {

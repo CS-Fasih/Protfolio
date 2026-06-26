@@ -111,6 +111,16 @@ export default function Certifications() {
                       {cert.provider}
                     </span>
                     <span className="cert-card__date">{cert.date}</span>
+                    {cert.url && (
+                      <a 
+                        href={cert.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="cert-card__verify"
+                      >
+                        Verify ↗
+                      </a>
+                    )}
                   </div>
                 </div>
                 <div className="cert-card__skills">

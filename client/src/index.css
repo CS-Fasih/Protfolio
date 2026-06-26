@@ -886,6 +886,22 @@ button {
   letter-spacing: 1px;
 }
 
+.cert-card__verify {
+  font-size: 11px;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  margin-top: 2px;
+}
+
+.cert-card__verify:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
 .cert-card__skills {
   display: flex;
   gap: 6px;

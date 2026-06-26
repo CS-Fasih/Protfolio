@@ -866,12 +866,6 @@ button {
   line-height: 1.4;
 }
 
-.cert-card--clickable {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
 .cert-card__meta {
   display: flex;
   flex-direction: column;

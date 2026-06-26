@@ -90,57 +90,39 @@ export default function Certifications() {
 
         {/* Card Grid */}
         <div className="cert-list reveal">
-          {visibleCertifications.map((cert) => {
-            const innerContent = (
-              <>
-                <div
-                  className="cert-card__accent"
-                  style={{
-                    background: providerColors[cert.provider] || '#999',
-                  }}
-                />
-                <div className="cert-card__content">
-                  <div className="cert-card__main">
-                    <h4 className="cert-card__title">{cert.title}</h4>
-                    <div className="cert-card__meta">
-                      <span
-                        className="cert-card__provider"
-                        style={{
-                          color: providerColors[cert.provider] || '#999',
-                        }}
-                      >
-                        {cert.provider}
-                      </span>
-                      <span className="cert-card__date">{cert.date}</span>
-                    </div>
-                  </div>
-                  <div className="cert-card__skills">
-                    {cert.skills.map((skill) => (
-                      <span key={skill} className="cert-card__skill">
-                        {skill}
-                      </span>
-                    ))}
+          {visibleCertifications.map((cert) => (
+            <div className="cert-card" key={cert.id}>
+              <div
+                className="cert-card__accent"
+                style={{
+                  background: providerColors[cert.provider] || '#999',
+                }}
+              />
+              <div className="cert-card__content">
+                <div className="cert-card__main">
+                  <h4 className="cert-card__title">{cert.title}</h4>
+                  <div className="cert-card__meta">
+                    <span
+                      className="cert-card__provider"
+                      style={{
+                        color: providerColors[cert.provider] || '#999',
+                      }}
+                    >
+                      {cert.provider}
+                    </span>
+                    <span className="cert-card__date">{cert.date}</span>
                   </div>
                 </div>
-              </>
-            );
-
-            return cert.url ? (
-              <a
-                key={cert.id}
-                href={cert.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cert-card cert-card--clickable"
-              >
-                {innerContent}
-              </a>
-            ) : (
-              <div className="cert-card" key={cert.id}>
-                {innerContent}
+                <div className="cert-card__skills">
+                  {cert.skills.map((skill) => (
+                    <span key={skill} className="cert-card__skill">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
         {/* Load More Button */}
